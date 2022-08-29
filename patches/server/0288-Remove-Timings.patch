@@ -103,7 +103,7 @@ index 8bc0cb9ad5bb4e76d962ff54305e2c08e279a17b..e8efbbeece7e866c6c4d7489677d2d9e
                      PacketUtils.LOGGER.debug("Ignoring packet due to disconnection: {}", packet);
                  }
 diff --git a/src/main/java/net/minecraft/server/MinecraftServer.java b/src/main/java/net/minecraft/server/MinecraftServer.java
-index 63660814d0ba4090f52146119707f04d8b905f18..c340f7577435d59ae46455a2b94521bc401aeaa9 100644
+index 87c4ab9f5e81bf3314ab56c028dd97668d7b8557..a8ed52afb5ab8106f94502ac05992e839c20b0cb 100644
 --- a/src/main/java/net/minecraft/server/MinecraftServer.java
 +++ b/src/main/java/net/minecraft/server/MinecraftServer.java
 @@ -1428,15 +1428,15 @@ public abstract class MinecraftServer extends ReentrantBlockableEventLoop<TickTa
@@ -286,7 +286,7 @@ index 5de95ba778e4a0cd1467e7392aa80eda1bd21a03..0bfdc4247a651f6c1caf7a95114be68b
  
      @Override
 diff --git a/src/main/java/net/minecraft/server/level/ChunkMap.java b/src/main/java/net/minecraft/server/level/ChunkMap.java
-index 9acfb1a0b15a304401ad3e5e8dfb869b15bf787a..01a6751f096eec3e7b2f854550fd812dabb52a90 100644
+index c304ed6ce1be3c740f6778dc8689e96b68c0c406..9692e9a9016f3d22c83003260205706311cf9a70 100644
 --- a/src/main/java/net/minecraft/server/level/ChunkMap.java
 +++ b/src/main/java/net/minecraft/server/level/ChunkMap.java
 @@ -1002,15 +1002,15 @@ public class ChunkMap extends ChunkStorage implements ChunkHolder.PlayerProvider
@@ -390,10 +390,10 @@ index 9acfb1a0b15a304401ad3e5e8dfb869b15bf787a..01a6751f096eec3e7b2f854550fd812d
      }
  
      private boolean isExistingChunkFull(ChunkPos pos) {
-@@ -2109,24 +2109,24 @@ public class ChunkMap extends ChunkStorage implements ChunkHolder.PlayerProvider
-         }
-         // Pufferfish end
+@@ -2081,24 +2081,24 @@ public class ChunkMap extends ChunkStorage implements ChunkHolder.PlayerProvider
  
+     // Paper start - optimised tracker
+     private final void processTrackQueue() {
 -        this.level.timings.tracker1.startTiming();
 +        //this.level.timings.tracker1.startTiming(); // Purpur
          try {
@@ -419,7 +419,7 @@ index 9acfb1a0b15a304401ad3e5e8dfb869b15bf787a..01a6751f096eec3e7b2f854550fd812d
          }
      }
      // Paper end - optimised tracker
-@@ -2141,7 +2141,7 @@ public class ChunkMap extends ChunkStorage implements ChunkHolder.PlayerProvider
+@@ -2113,7 +2113,7 @@ public class ChunkMap extends ChunkStorage implements ChunkHolder.PlayerProvider
          List<ServerPlayer> list = Lists.newArrayList();
          List<ServerPlayer> list1 = this.level.players();
          ObjectIterator objectiterator = this.entityMap.values().iterator();
@@ -428,7 +428,7 @@ index 9acfb1a0b15a304401ad3e5e8dfb869b15bf787a..01a6751f096eec3e7b2f854550fd812d
  
          ChunkMap.TrackedEntity playerchunkmap_entitytracker;
  
-@@ -2166,17 +2166,17 @@ public class ChunkMap extends ChunkStorage implements ChunkHolder.PlayerProvider
+@@ -2138,17 +2138,17 @@ public class ChunkMap extends ChunkStorage implements ChunkHolder.PlayerProvider
                  playerchunkmap_entitytracker.serverEntity.sendChanges();
              }
          }
